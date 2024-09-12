@@ -12,27 +12,6 @@ if test (count $brewcmds) -eq 0
 end
 $brewcmds[1] shellenv | source
 
-function brewdesc -d 'Show descriptions of brew installs'
-    brew leaves |
-        xargs brew desc --eval-all |
-        string replace -r '^(.*:)(\s+[^\[].*)$' '$1'(set_color blue)'$2'(set_color normal)
-end
-
-function brews -d "Show brewed formulae"
-    set -l formulae (brew leaves | xargs brew deps --installed --for-each)
-    set -l casks (brew list --cask 2>/dev/null)
-
-    echo (set_color blue)"==>"(set_color --bold normal)" Formulae"(set_color normal)
-    string replace -r '^(.*):(.*)$' '$1'(set_color blue)'$2'(set_color normal) $formulae
-    echo
-    echo (set_color blue)"==>"(set_color --bold normal)" Casks"(set_color normal)
-    printf '%s\n' $casks
-end
-
-function brewup -d 'Update homebrew, upgrade installed packages, and cleanup'
-    brew update && brew upgrade && brew cleanup
-end
-
 # If the brew path is owned by another user, wrap it so brew commands
 # are executed as the brew owner.
 set -gx HOMEBREW_OWNER (stat -f "%Su" $HOMEBREW_PREFIX)

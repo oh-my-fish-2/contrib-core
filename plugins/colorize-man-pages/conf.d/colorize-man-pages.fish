@@ -1,0 +1,7 @@
+set -q LESS_TERMCAP_md || set -gx LESS_TERMCAP_md (set_color --bold blue)
+set -q LESS_TERMCAP_mb || set -gx LESS_TERMCAP_mb (set_color --bold blue)
+set -q LESS_TERMCAP_so || set -gx LESS_TERMCAP_so (set_color --reverse brwhite)
+set -q LESS_TERMCAP_us || set -gx LESS_TERMCAP_us (set_color --underline magenta)
+set -q LESS_TERMCAP_se || set -gx LESS_TERMCAP_se (set_color normal)
+set -q LESS_TERMCAP_ue || set -gx LESS_TERMCAP_ue (set_color normal)
+set -q LESS_TERMCAP_me || set -gx LESS_TERMCAP_me (set_color normal)

@@ -24,7 +24,3 @@ function gi --description "Generate a git ignore file"
     set --local templates (string join , $argv)
     curl -fLw '\n' https://www.toptal.com/developers/gitignore/api/$templates
 end
-
-complete --command gi --no-files -a "(gi --list)"
-complete --command gi --no-files -s h -l help -d "Show usage"
-complete --command gi --no-files -s l -l list -d "List templates"
