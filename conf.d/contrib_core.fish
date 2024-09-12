@@ -1,9 +1,8 @@
-if not type -q omf2 && type -q fisher
-    fisher install oh-my-fish-2/omf2
-end
-
 # Support Fisher's plugin events
 function _omf2_core_install --on-event omf2_core_install
+    if not type -q omf2 && type -q fisher
+        fisher install oh-my-fish-2/omf2
+    end
     omf2 fisher-event install oh-my-fish-2/contrib-core
 end
 
