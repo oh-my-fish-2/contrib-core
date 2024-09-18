@@ -1,0 +1,55 @@
+# https://github.com/oh-my-fish/theme-default/
+add_newline = false
+
+# left prompt
+format = """${custom.vi_mode}${character}${directory}${git_branch}${git_status}"""
+
+# right prompt shows time
+right_format = """$time"""
+
+# Make the palette whatever you want
+palette = 'omf2'
+
+# Define colors
+[palettes.omf2]
+gray = '#555555'
+
+[character]
+success_symbol = '[⋊>](cyan)'
+error_symbol = '[⋊>](bold red)'
+
+[directory]
+style = "yellow"
+truncation_length = 1
+truncation_symbol = ""
+fish_style_pwd_dir_length = 1
+
+# right prompt uses left space padding
+[git_branch]
+format = '[$branch]($style) '
+style = 'green'
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = "green"
+untracked = ''
+ahead = '↑'
+behind = '↓'
+stashed = '≡'
+modified = '⨯'
+diverged = '⥄'
+up_to_date = '' # '◦'
+
+[time]
+format = '[$time]($style)'
+style = "gray"
+disabled = false
+
+[line_break]
+disabled = true
+
+[custom.vi_mode]
+format="[$output]($style) "
+style = ""
+command = 'echo $vi_mode_symbol'
+when = 'test -n "$vi_mode_symbol"'
