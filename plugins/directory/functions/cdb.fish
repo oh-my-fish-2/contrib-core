@@ -6,5 +6,5 @@
 # some-command /path/to/some/file
 # cdb <ALT+up>
 function cdb -d "cd to base directory of argument"
-	cd (dirname $argv[1])
+    cd (dirname $argv[1])
 end
