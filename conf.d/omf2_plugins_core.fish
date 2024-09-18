@@ -9,13 +9,13 @@ function _omf2
 end
 
 function _omf2_plugins_core_install --on-event omf2_plugins_core_install
-    _omf2 install oh-my-fish-2/plugins-core
+    _omf2 fisher-event install oh-my-fish-2/plugins-core
 end
 
 function _omf2_plugins_core_update --on-event omf2_plugins_core_update
-    _omf2 update oh-my-fish-2/plugins-core
+    _omf2 fisher-event update oh-my-fish-2/plugins-core
 end
 
 function _omf2_plugins_core_uninstall --on-event omf2_plugins_core_uninstall
-    _omf2 uninstall oh-my-fish-2/plugins-core
+    _omf2 fisher-event uninstall oh-my-fish-2/plugins-core
 end
