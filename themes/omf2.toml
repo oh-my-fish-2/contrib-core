@@ -2,7 +2,7 @@
 add_newline = false
 
 # left prompt
-format = """${custom.vi_mode}${character}${directory}${git_branch}${git_status}"""
+format = """${custom.vi_mode}${character}${directory}${git_branch}${git_status}${custom.git_status_dirty}"""
 
 # right prompt shows time
 right_format = """$time"""
@@ -30,15 +30,19 @@ format = '[$branch]($style) '
 style = 'green'
 
 [git_status]
-format = '[$all_status$ahead_behind]($style) '
+format = '([\[$ahead_behind$diverged$stashed\]]($style) )'
 style = "green"
-untracked = ''
-ahead = '↑'
-behind = '↓'
-stashed = '≡'
-modified = '⨯'
+stashed = "≡"
+ahead = "↑"
+behind = "↓"
 diverged = '⥄'
-up_to_date = '' # '◦'
+
+[custom.git_status_dirty]
+when = 'test -n "$(git status --porcelain 2>/dev/null)"'
+symbol = "⨯"
+style = "green"
+format="[$symbol]($style) "
+shell = ["sh"]
 
 [time]
 format = '[$time]($style)'

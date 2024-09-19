@@ -9,7 +9,7 @@ end
 
 # Set default STARSHIP_CONFIG.
 if not set -qU STARSHIP_CONFIG
-    set -Ux STARSHIP_CONFIG (path resolve (status dirname)/../themes/omf2.toml)
+    set -Ux STARSHIP_CONFIG (path resolve (status dirname)/../../../themes/omf2.toml)
 end
 
 # Remove any inherited one.
